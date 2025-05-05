@@ -1,9 +1,4 @@
 # Correlation and regression for data analysis
-
-# Name:SELVAGABESH B
-# Reg no: 212224230258
-# Dept: AI&DS
-
 # Aim : 
 
 To analyse given data using coeffificient of correlation and regression line
@@ -26,11 +21,48 @@ If y represents the dependent variable and x the independent variable, this rela
 
 # Program :
 
-![image](https://github.com/ramjan1729/Correlation_Regression/assets/103921593/9eb48cbf-8ca3-4cd9-8440-ff45fd98333e)
+```
+# SELVAGANESH B
+# 212224230258
+import numpy as np
+import math
+import matplotlib.pyplot as plt
+x=[ int(i) for i in input().split()]
+y=[ int(i) for i in input().split()]
+N=len(x)
+Sx=0
+Sy=0
+Sxy=0
+Sx2=0
+Sy2=0
+for i in range(0,N):
+    Sx=Sx+x[i]
+    Sy=Sy+y[i]
+    Sxy=Sxy+x[i]*y[i]
+    Sx2=Sx2+x[i]**2
+    Sy2=Sy2+y[i]**2
+r=(N*Sxy-Sx*Sy)/(math.sqrt(N*Sx2-Sx**2)*math.sqrt(N*Sy2-Sy**2))
+print("The Correlation coefficient is %0.3f"%r)
+byx=(N*Sxy-Sx*Sy)/(N*Sx2-Sx**2)
+xmean=Sx/N
+ymean=Sy/N
+print("The Regression line Y on X is ::: y = %0.3f + %0.3f (x-%0.3f)"%(ymean,byx,xmean))
+plt.scatter(x,y)
+def Reg(x):
+  return ymean + byx*(x-xmean)
+x=np.linspace(20,80,51)
+y1=Reg(x)
+plt.plot(x,y1,'r')
+plt.xlabel('x-data')
+plt.ylabel('y-data')
+plt.legend(['Regression Line','Data points'])
+```
 
-# Output 
-![Screenshot 2025-04-29 143553](https://github.com/user-attachments/assets/8c4d5398-c7cc-40e4-b842-254deee49f73)
+# Output :
+![Screenshot 2025-05-04 110036](https://github.com/user-attachments/assets/59f723c8-cbf9-499d-9c90-63d2a9818426)
 
 
-# Result
+# Result:
+The Correlation and regression for data analysis of objects from feeder using probability distribution are calculated.
+
 
